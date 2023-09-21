@@ -23,15 +23,15 @@ node('docker') {
                     make 'clean'
                 }
 
-//                kubevalImage = "cytopia/kubeval:0.15"
-//                stage("Lint k8s Resources") {
-//                    new Docker(this)
-//                            .image(kubevalImage)
-//                            .inside("-v ${WORKSPACE}/promtail/manifests/:/data -t --entrypoint=")
-//                                    {
-//                                        sh "kubeval manifests/promtail.yaml --ignore-missing-schemas"
-//                                    }
-//                }
+                kubevalImage = "cytopia/kubeval:0.15"
+                stage("Lint k8s Resources") {
+                    new Docker(this)
+                            .image(kubevalImage)
+                            .inside("-v ${WORKSPACE}/promtail/manifests/:/data -t --entrypoint=")
+                                    {
+                                        sh "kubeval manifests/promtail.yaml --ignore-missing-schemas"
+                                    }
+                }
 
                 stage('Set up k3d cluster') {
                     k3d.startK3d()
