@@ -1,0 +1,10 @@
+apiVersion: v2
+name: k8s-promtail
+description: Promtail is an agent which ships the contents of local logs to a Loki instance
+type: application
+version: 0.0.0-replaceme
+appVersion: "0.0.0-replaceme"
+dependencies:
+  - name: promtail
+    version: 6.15.2
+    repository: https://grafana.github.io/helm-charts
