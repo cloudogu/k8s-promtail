@@ -1,0 +1,23 @@
+promtail:
+  nameOverride: k8s-promtail
+  podLabels:
+    app: ces
+  extraEnv:
+    - name: LOKI_USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: k8s-loki-gateway-secret
+          key: username
+    - name: LOKI_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: k8s-loki-gateway-secret
+          key: password
+  extraArgs:
+    - -config.expand-env
+  config:
+    clients:
+      - url: http://k8s-loki-gateway.ecosystem.svc.cluster.local/loki/api/v1/push
+        basic_auth:
+          username: ${LOKI_USERNAME}
+          password: ${LOKI_PASSWORD}
