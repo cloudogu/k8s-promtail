@@ -13,7 +13,7 @@ update_versions_modify_files() {
   echo "Update helm dependencies"
   make helm-update-dependencies  > /dev/null
 
-  # Extract longhorn chart
+  # Extract promtail chart
   local promtailVersion
   promtailVersion=$(yq '.dependencies[] | select(.name=="promtail").version' < "k8s/helm/Chart.yaml")
   local promtailPackage
