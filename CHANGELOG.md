@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- [#2] Add patch templates to use this chart in airgapped environments.
 - [#4] Add default configuration for using k8s-loki
 
 ## [v2.9.1-1] - 2023-09-26
