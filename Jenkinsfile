@@ -12,6 +12,9 @@ changelog = new Changelog(this)
 repositoryName = "k8s-promtail"
 productionReleaseBranch = "main"
 
+String registryNamespace = "k8s"
+String registryUrl = "registry.cloudogu.com"
+
 goVersion = "1.21"
 helmTargetDir = "target/k8s"
 helmChartDir = "${helmTargetDir}/helm"
@@ -48,6 +51,14 @@ node('docker') {
                         k3d.startK3d()
                     }
 
+                    stage('Deploy minio') {
+                        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'harborhelmchartpush', usernameVariable: 'HARBOR_USERNAME', passwordVariable: 'HARBOR_PASSWORD']]) {
+                            k3d.helm("registry login ${registryUrl} --username '${HARBOR_USERNAME}' --password '${HARBOR_PASSWORD}'")
+                            k3d.helm("install k8s-minio oci://${registryUrl}/${registryNamespace}/k8s-minio --version 2023.9.23-3")
+                            k3d.helm("install k8s-loki oci://${registryUrl}/${registryNamespace}/k8s-loki --version 2.9.1-3")
+                        }
+                    }
+
                     stage('Deploy k8s-promtail') {
                         k3d.helm("install ${repositoryName} ${helmChartDir}")
                     }
@@ -78,8 +89,6 @@ void stageAutomaticRelease() {
         Makefile makefile = new Makefile(this)
         String releaseVersion = makefile.getVersion()
         String changelogVersion = git.getSimpleBranchName()
-        String registryNamespace = "k8s"
-        String registryUrl = "registry.cloudogu.com"
 
         stage('Push Helm chart to Harbor') {
             new Docker(this)
