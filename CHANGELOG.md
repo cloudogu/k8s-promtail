@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [v2.9.1-2] - 2023-12-07
 ### Added
 - [#2] Add patch templates to use this chart in airgapped environments.
 - [#4] Add default configuration for using k8s-loki
