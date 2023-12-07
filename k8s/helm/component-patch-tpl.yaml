@@ -1,0 +1,18 @@
+apiVersion: v1
+values:
+  images:
+    promtail: grafana/promtail:2.9.1
+    sidecar: jimmidyson/configmap-reload:v0.8.0
+patches:
+  values.yaml:
+    promtail:
+      image:
+        registry: "{{ registryFrom .images.promtail }}"
+        repository: "{{ repositoryFrom .images.promtail }}"
+        tag: "{{ tagFrom .images.promtail }}"
+      sidecar:
+        configReloader:
+          image:
+            registry: "{{ registryFrom .images.sidecar }}"
+            repository: "{{ repositoryFrom .images.sidecar }}"
+            tag: "{{ tagFrom .images.sidecar }}"
