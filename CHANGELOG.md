@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v2.9.1-3] - 2024-09-19
+### Changed
+- Relicense to AGPL-3.0-only
+
 ## [v2.9.1-2] - 2023-12-07
 ### Added
 - [#2] Add patch templates to use this chart in airgapped environments.
