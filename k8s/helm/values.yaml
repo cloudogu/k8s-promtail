@@ -16,6 +16,10 @@ promtail:
   extraArgs:
     - -config.expand-env
   config:
+    snippets:
+      pipelineStages:
+        - cri: {}
+        - decolorize: {}
     clients:
       - url: http://k8s-loki-gateway.ecosystem.svc.cluster.local/loki/api/v1/push
         basic_auth:
