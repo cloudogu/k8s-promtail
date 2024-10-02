@@ -12,4 +12,4 @@ dependencies:
 annotations:
   # For k8s-loki it is important to include "prerelease"-versions like "2.9.1-2", so there must be a "-0" after the patch-version.
   # see https://helm.sh/docs/chart_best_practices/dependencies/#prerelease-versions for more information
-  "k8s.cloudogu.com/ces-dependency/k8s-loki": ">2.9.1-0"
+  "k8s.cloudogu.com/ces-dependency/k8s-loki": ">=2.9.1-0"
