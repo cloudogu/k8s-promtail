@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v2.9.1-4] - 2024-10-07
+### Changed
+- [#8] Remove ansi color codes from log output.
+
+### Fixed
+- Fixed helm version constraint and allow loki versions >=2.9.1-0 and <4.0.0-0
+
 ## [v2.9.1-3] - 2024-09-19
 ### Changed
 - Relicense to AGPL-3.0-only
