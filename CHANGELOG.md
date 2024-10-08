@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v2.9.1-5] - 2024-10-08
+### Fixed
+- [#8] Fix helm version constraint for dependency k8s-loki
+
 ## [v2.9.1-4] - 2024-10-07
+
+### Attention
+- This release is broken due to an invalid helm dependency constraint for `k8s-loki`. Please use the next release.
+
 ### Changed
 - [#8] Remove ansi color codes from log output.
 
