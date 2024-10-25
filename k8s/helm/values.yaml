@@ -1,3 +1,6 @@
+global:
+  imagePullSecrets:
+    - "ces-container-registries"
 promtail:
   nameOverride: k8s-promtail
   podLabels:
