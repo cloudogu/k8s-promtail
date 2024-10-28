@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v2.9.1-6] - 2024-10-28
+### Changed
+- [#12] Use `ces-container-registries` secret for pulling container images as default.
+
 ## [v2.9.1-5] - 2024-10-08
 ### Fixed
 - [#8] Fix helm version constraint for dependency k8s-loki
