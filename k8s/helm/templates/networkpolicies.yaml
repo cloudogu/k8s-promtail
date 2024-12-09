@@ -1,10 +1,9 @@
-# ingress für loki-gateway anlegen
-{{- if .Values.networkPolicy.enabled }}
+{{- if .Values.global.networkPolicies.enabled }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: loki-ingress-for-promtail-communication
+  name: {{ printf "%s-loki-ingress" (include "promtail.fullname" .) | trunc 63 | trimSuffix "-" }}
   namespace: {{ include "promtail.namespaceName" . }}
   labels:
     {{- include "promtail.labels" . | nindent 4 }}
@@ -21,8 +20,23 @@ spec:
         - podSelector:
             matchLabels:
               app: ces
-              app.kubernetes.io/name: k8s-promtail
+              {{- include "promtail.selectorLabels" . | nindent 14 }}
       ports:
       - protocol: TCP
         port: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ printf "%s-deny-ingress" (include "promtail.fullname" .) | trunc 63 | trimSuffix "-" }}
+  namespace: {{ include "promtail.namespaceName" . }}
+  labels:
+    {{- include "promtail.labels" . | nindent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      app: ces
+      {{- include "promtail.selectorLabels" . | nindent 6 }}
+  policyTypes:
+    - Ingress
 {{- end }}
