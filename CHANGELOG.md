@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Ingress Network Policy for Loki-gateway so that Promtail can access it
+- [#14] NetworkPolicy to block all ingress traffic
+- [#14] Ingress Network Policy for Loki-gateway so that Promtail can access it
 
 ## [v2.9.1-6] - 2024-10-28
 ### Changed
