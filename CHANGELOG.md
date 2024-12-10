@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v2.9.1-7] - 2024-12-10
+### Added
+- [#14] NetworkPolicy to block all ingress traffic
+- [#14] Ingress Network Policy for Loki-gateway so that Promtail can access it
+
 ## [v2.9.1-6] - 2024-10-28
 ### Changed
 - [#12] Use `ces-container-registries` secret for pulling container images as default.
