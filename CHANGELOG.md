@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [v2.9.1-7] - 2024-12-10
 ### Added
 - [#14] NetworkPolicy to block all ingress traffic
 - [#14] Ingress Network Policy for Loki-gateway so that Promtail can access it
