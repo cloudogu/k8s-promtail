@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- [#16] Set sensible resource limits and requests
+
 ## [v2.9.1-7] - 2024-12-10
 ### Added
 - [#14] NetworkPolicy to block all ingress traffic
