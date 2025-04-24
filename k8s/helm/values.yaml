@@ -7,6 +7,12 @@ promtail:
   nameOverride: k8s-promtail
   podLabels:
     app: ces
+  resources:
+    limits:
+      memory: 164M
+    requests:
+      cpu: 35m
+      memory: 164M
   extraEnv:
     - name: LOKI_USERNAME
       valueFrom:
