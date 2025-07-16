@@ -31,8 +31,7 @@ promtail:
       pipelineStages:
         - cri: {}
         - decolorize: {}
-    server:
-      log_level: info
+    logLevel: info
     clients:
       - url: http://k8s-loki-gateway.ecosystem.svc.cluster.local/loki/api/v1/push
         basic_auth:
