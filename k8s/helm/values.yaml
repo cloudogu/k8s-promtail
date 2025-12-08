@@ -4,6 +4,8 @@ global:
   networkPolicies:
     enabled: true
 promtail:
+  image:
+    tag: 2.9.17
   nameOverride: k8s-promtail
   podLabels:
     app: ces

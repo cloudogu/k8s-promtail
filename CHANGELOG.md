@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v2.9.17-1] - 2025-12-08
+### Changed
+- [#20] Update promtail from 2.9.1 to 2.9.17 to fix CVEs
+
 ## [v2.9.1-9] - 2025-07-16
 ### Changed
 - [#18] Update Makefiles to 10.2.0
