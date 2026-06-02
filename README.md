@@ -1,5 +1,8 @@
 # k8s-promtail
 
+> [!IMPORTANT]
+> `k8s-promtail` is archived as of June 2026. It is recommended to use [k8s-alloy](https://github.com/cloudogu/k8s-alloy) instead.
+
 Promtail component for Cloudogu k8s-ecosystem
 
 ---
